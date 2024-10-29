@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <script src="../JS/jquery-3.7.1.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+
+    <title>Document</title>
+</head>
+<style>
+    [class*=col-] {
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    nav ul li {
+        width: 150px;
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        $("#btnOpen").click(function(e) {
+            $("#myModal").modal();
+        });
+
+        function kiemtraMaSV() {
+            var mauKT = /^(K16-)[0-9]{9}$/;
+            var chuoiMaSV = $("#txtMaSV").val();
+            var kq = mauKT.test(chuoiMaSV);
+            if (kq == false || kq == " ") {
+                alert("nhập sai mẫu");
+            } else {
+                alert("nhập đúng mẫu");
+            }
+        }
+        $("#txtMaSV").blur(kiemtraMaSV);
+
+        function kiemtraHoten() {
+            var mauKT = /^[A-Z]{1}[a-z]+(\s[A-Z]{1}[a-z]*)+$/;
+            var chuoiHoten = $("#txtHoten").val();
+            var kq = mauKT.test(chuoiHoten);
+            if (kq == false || kq == " ") {
+                alert("nhập sai mẫu");
+            } else {
+                alert("nhập đúng mẫu");
+            }
+        }
+        $("#txtHoten").blur(kiemtraHoten);
+
+        function kiemtraLop() {
+            var mauKT = /^[A-Z0-9]{11}$/;
+            var chuoiLop = $("#txtLop").val();
+            var kq = mauKT.test(chuoiLop);
+            if (kq == false || kq == " ") {
+                alert("nhập sai mẫu");
+            } else {
+                alert("nhập đúng mẫu");
+            }
+        }
+        $("#txtLop").blur(kiemtraLop);
+
+        function kiemtraLop() {
+            var mauKT = /^[A-Z0-9]{11}$/;
+            var chuoiLop = $("#txtLop").val();
+            var kq = mauKT.test(chuoiLop);
+            if (kq == false || kq == " ") {
+                alert("nhập sai mẫu");
+            } else {
+                alert("nhập đúng mẫu");
+            }
+        }
+        $("#txtLop").blur(kiemtraLop);
+
+        function kiemtraPhone() {
+            var mauKT = /^0\d{3}-\d{3}-\d{3}$/;
+            var chuoiphone = $("#txtphone").val();
+            var kq = mauKT.test(chuoiphone);
+            if (kq == false || kq == " ") {
+                alert("nhập sai mẫu");
+            } else {
+                alert("nhập đúng mẫu");
+            }
+        }
+        $("#txtphone").blur(kiemtraPhone);
+
+        function kiemtraEmail() {
+            var mauKT = /^[a-zA-Z0-9._%+-]+@iuh\.edu\.vn$/;
+            var chuoiEmail = $("#txtEmail").val();
+            var kq = mauKT.test(chuoiEmail);
+            if (kq == false || kq == " ") {
+                alert("nhập sai mẫu");
+            } else {
+                alert("nhập đúng mẫu");
+            }
+        }
+        $("#txtEmail").blur(kiemtraEmail);
+
+        function kiemtraDate() {
+            var today = new date();
+            var futuredate = new date();
+            futuredate.setDate(today.getDate() + 30);
+            var chuoiDate = new Date($("#txtDate").val());
+            if (chuoiDate > futuredate) {
+                alert("Ngày hợp lệ");
+            } else {
+                alert("Ngày không hợp lệ");
+            }
+        }
+        $("#txtDate").blur(kiemtraDate);
+    });
+</script>
+
+<body>
+    <div class="container bg-light">
+        <div class="row">
+            <div class="col-12 col-md-12">
+                <img src="../IMG/HEADER.PNG" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <nav class="navbar navbar-expand">
+                <ul class="navbar-nav">
+                    <li><a href="#" class="nav-link">Đăng nhập</a></li>
+                    <li><a href="#" class="nav-link" id="btnOpen">Đăng kí</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-12 align-content-around align-content-between">
+                <h3>DANH SÁCH THAM GIA DỘI ROBOCON CỦA KHOA CNTT</h3>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">STT</th>
+                        <th scope="col">Mã thành viên</th>
+                        <th scope="col">Họ tên</th>
+                        <th scope="col">Lớp</th>
+                        <th scope="col">Ngày tham gia</th>
+                        <th scope="col">Điện thoại</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>K16-123456789</td>
+                            <td>Tran Thanh Kha</td>
+                            <td>DHKTPM165ATT</td>
+                            <td>22/02/2022</td>
+                            <td>0909-123-123</td>
+                            <td>thanhkha@iuh.edu.vn</td>
+                        </tr>
+                    </tbody>
+                </thead>
+            </table>
+        </div>
+        <div class="row align-content-around">
+            <div class="col-3 col-md-3">
+                <p>SVTH:......</p>
+            </div>
+            <div class="col-3 col-md-3">
+                <p>Mã số sinh viên:......</p>
+            </div>
+            <div class="col-3 col-md-3">
+                <p>lớp DHKTPM16......</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="modal fade" id="myModal">
+                <modal-dialog>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">THÔNG TIN CÁ NHÂN</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="">
+                                <div class="form-group">
+                                    <label for="">Mã thành viên:</label>
+                                    <input type="text" placeholder="Mã: K16- 123456789" class="form-control" id="txtMaSV">
+                                    <small class="form-text text-danger">*</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Họ tên :</label>
+                                    <input type="text" placeholder="Họ tên: Tran Anh Dung" class="form-control" id="txtHoten">
+                                    <small class="form-text text-danger">*</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Lớp:</label>
+                                    <input type="text" placeholder="lớp: DHKTPM16ATT" class="form-control" id="txtLop">
+                                    <small class="form-text text-danger">*</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Ngày tham gia</label>
+                                    <input type="date" class="form-control" id="txtDate">
+                                    <small class="form-text text-danger">*</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Số điện thoại</label>
+                                    <input type="text" placeholder="SDT: 0xxx-xxx-xxx" class="form-control" id="txtphone">
+                                    <small class="form-text text-danger">*</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Email:</label>
+                                    <input type="text" placeholder="Email: xxxxx@iuh.edu.vn" class="form-control" id="txtEmail">
+                                    <small class="form-text text-danger">*</small>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-block btn-primary">Gửi</button>
+                        </div>
+                    </div>
+                </modal-dialog>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
